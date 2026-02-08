@@ -1,0 +1,152 @@
+{% extends "layout2.html" %}
+
+{% block head %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href='https://cdn.boxicons.com/3.0.3/fonts/basic/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+        *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Momo Trust Display', sans-serif;
+                color: white;
+        }
+
+        .wrapper {
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                color: white;
+                text-align: center;
+        }
+
+        body {
+                height: 100%;
+                background-color: #222222;
+                color:white;
+                overflow-y: auto;
+        }
+        
+        .title_message {
+                font-size: 50px;
+                font-weight: bold;
+                margin: 40px 0 10px;
+                padding: 10px;
+        }
+
+        .message {
+                font-size: 30px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                margin-top: 25px;
+        }
+
+        .line {
+                border: 1px solid white;
+                margin: 20px 0;
+        }
+
+        .wrapper img{
+                border-radius: 15px;
+                max-width: 50%;
+                height: auto;
+        }
+
+        .gallary{
+                display: inline-block;
+                padding: 20px;
+        }
+
+        .gallary video{
+                border-radius: 15px;
+                border: 5px solid rgba(255, 255, 255, 0.2);
+                max-width: 100%;
+                height: auto;
+        }
+
+        .gallary .description{
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 10px;
+        }
+        
+        .wrapper h1 {
+                text-align: center;
+                font-size: 36px;
+                font-weight: bold;
+                margin: 20px 0 0;
+        }
+
+        .btn-custom {
+        display: inline-block;
+        width: 100%;
+        max-width: 320px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 20px;
+        color: white;
+        background: transparent;        
+        text-decoration: none;
+        text-align: center;
+        border: 1px solid white;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 30px;
+        }
+
+        .small-message{
+                font-size: 16px;
+                color:  white;
+                text-align: center;
+                display: block;
+        }
+
+        .list-group-item{
+                background-color: #333333;
+                color: white;
+                border: none;
+                margin-bottom: 10px;
+                border-radius: 10px;
+        }
+
+        .list-group-item:hover{
+                background-color: #444444;
+                color: white;
+        }
+
+</style>
+{% endblock %}
+{% block body %}
+<div class="wrapper">
+        <div class="title_message">
+                Your Routines:
+        </div>
+        <hr class="line">
+        
+        {% if routines %}
+        <div class="list-group">
+        {% for r in routines %}
+                <a href="{{ url_for('routine_detail', routine_id=r.id) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+                <div>
+                        <div class="small-message" style="text-align: left;">{{ r.name }}</div>
+                        <div class="small-message">Created {{ r.created_at.strftime('%Y-%m-%d') }}</div>
+                </div>
+                <div class="small-message" style="transform: translateY(12px);">{{ (r.exercises_json | fromjson | length) if r.exercises_json else 0 }} exercises</div>
+                </a>
+        {% endfor %}
+        </div>
+        {% else %}
+                <div class="message">
+                        You have no routines yet. Click "New Routine" to create one!
+        {% endif %}
+
+        <a class="btn-custom" href="{{ url_for('new_routine') }}">New Routine</a>
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,236 @@
+{% extends "layout2.html" %}
+
+{% block head %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href='https://cdn.boxicons.com/3.0.3/fonts/basic/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+        *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Momo Trust Display', sans-serif;
+                color: white;
+        }
+
+        .wrapper {
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                color: white;
+                text-align: center;
+        }
+
+        body {
+                height: 100%;
+                background-color: #222222;
+                color:white;
+                overflow-y: auto;
+        }
+        
+        .title_message {
+                font-size: 50px;
+                font-weight: bold;
+                margin: 40px 0 10px;
+                padding: 10px;
+        }
+
+        .message {
+                font-size: 30px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                margin-top: 10px;
+        }
+
+        .line {
+                border: 1px solid white;
+                margin: 20px 0;
+        }
+
+        .wrapper img{
+                border-radius: 15px;
+                max-width: 50%;
+                height: auto;
+        }
+
+        .gallary{
+                display: inline-block;
+                padding: 20px;
+        }
+
+        .gallary video{
+                border-radius: 15px;
+                border: 5px solid rgba(255, 255, 255, 0.2);
+                max-width: 100%;
+                height: auto;
+        }
+
+        .gallary .description{
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 10px;
+        }
+        
+        .wrapper h1 {
+                text-align: center;
+                font-size: 36px;
+                font-weight: bold;
+                margin: 20px 0 0;
+        }
+</style>
+{% endblock %}
+{% block body %}
+<div class="wrapper">
+        <div class="title_message">
+                Popular Exercises:
+        </div>
+        <hr class="line">
+        <h1> Chest </h1>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/bench_press.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description">Bench Press</div>
+        </div>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/incline_dumbell.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description">Incline Dumbell Press</div>
+        </div>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/machine_pecfly.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description"> Machine Pec Fly </div>
+        </div>
+
+        <hr class="line">
+
+        <h1> Back </h1>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/pullups.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description">Pull Ups</div>
+        </div>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/deadlift.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description">Deadlift</div>
+        </div>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/dumbell_row_uni.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description"> Unilateral Dumbell Row</div>
+        </div>
+
+        <hr class="line">
+
+        <h1> Bicep </h1>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/incline_dumbell_curl.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description"> Incline Dumbell Curl </div>
+        </div>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/chin_ups.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description"> Chin Ups </div>
+        </div>
+
+        <hr class="line">
+
+        <h1> Tricep </h1>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/rope_pushdown.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description"> Rope Tricep Pushdown</div>
+        </div>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/dumbell_skullcrusher.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description"> Dumbell Skullcrusher</div>
+        </div>
+
+        <hr class="line">
+
+        <h1> Shoulders </h1>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/lat_raise.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description"> Cable Lateral Raise</div>
+        </div>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/dumbell_shoulder_press.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description">Dumbell Shoulder Press</div>
+        </div>
+
+        <hr class="line">
+
+        <h1> Legs </h1>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/squat.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description">Barbell Squat</div>
+        </div>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/leg-extension.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description">Machine Leg Extension</div>
+        </div>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/hamstring_curl.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description">Machine Hamstring Curl</div>
+        </div>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/calf-raises.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description">Machine Calf Raises</div>
+        </div>
+        <div class="gallary">
+                <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='videos/deadlift.mp4')}}" type="video/mp4">
+                Your browser does not support html 5 video.
+                </video>
+                <div class="description">Deadlift</div>
+        </div>
+
+</div>
+
+
+{% endblock %}
+

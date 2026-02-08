@@ -1,0 +1,121 @@
+{% extends "layout1.html" %}
+
+{% block head %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href='https://cdn.boxicons.com/3.0.3/fonts/basic/boxicons.min.css' rel='stylesheet'>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Momo Trust Display", sans-serif;
+                color: white;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: #222222;
+            }
+
+            .wrapper {
+                width: 400px;
+                padding: 40px;
+                background: black;
+                color: white;
+            }
+
+            .wrapper h1 {
+                text-align: center;
+                font-size: 36px;
+                font-weight: bold;
+            }   
+
+            .wrapper .input-box {
+                position: relative;
+                width: 100%;
+                height: 50px;
+                margin: 30px 0;
+            }
+
+            .input-box input {
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                border: none;
+                outline: none;
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                border-radius: 40px;
+                color: white;
+                padding: 20px 45px 20px 20px;
+                font-size: 16px;
+            }
+
+            .input-box input::placeholder{
+                color: white;
+            }
+
+            .btn {
+                width: 100%;
+                height: 50px;
+                border: none;
+                outline: none;
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                border-radius: 40px;
+                color: black;
+                padding: 10px;
+                font-size: 18px;
+                font-weight: bold;
+                background-color: white;
+            }
+
+            .input-box i {
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 20px;
+            }
+
+            .alert {
+                text-align: center;
+                margin-top: -10px;
+                margin-bottom: 20px;
+            }
+
+            
+            
+
+        </style>
+{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <form action="" method="post">
+        <h1> Register </h1>
+        <div class="input-box">
+            <input name="username" type="text" placeholder="Username" required>
+            <i class='bx  bx-user-square'   ></i> 
+        </div>
+        <div class="input-box">
+            <input name="password" type="password" placeholder="Password" required>
+            <i class='bx  bx-lock'    ></i> 
+        </div>
+        <div class="input-box">
+            <input name="confirm_password" type="password" placeholder="Confirm Password" required>
+            <i class='bx  bx-checks'    ></i>         
+        </div> 
+        {% if error %}
+            <div class="alert alert-danger py-1 small">{{ error }}</div>
+        {% endif %}
+        <button type="submit" class="btn"> Register! </button>
+    </form>
+</div>
+
+
+{% endblock %}

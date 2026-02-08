@@ -1,0 +1,92 @@
+{% extends "layout1.html" %}
+
+{% block head %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href='https://cdn.boxicons.com/3.0.3/fonts/basic/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Momo Trust Display', sans-serif;
+        color: white;
+    }
+
+    nav.navbar {
+        background-color: transparent !important;
+    }
+
+    .wrapper {
+        height: 35%;
+        width: 1000px;
+        padding: 40px;
+        background: transparent;
+        color: white;
+        text-align: center;
+    }
+
+    .message {
+        font-size: 100px;
+        font-weight: bold;
+    }
+    
+    .wrapper .btn{
+        width: 100%;
+        height: 45px;
+        font-size: 20px;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        cursor: pointer;
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+        border: 1px solid white;
+        border-radius: 10px;
+    }
+    .btn a:hover{
+        text-decoration: none;
+        color: white;
+    }
+
+    .btn-custom {
+        display: inline-block;
+        width: 100%;
+        max-width: 320px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 20px;
+        color: white;
+        background: transparent;        
+        text-decoration: none;
+        text-align: center;
+        border: 1px solid white;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+</style>
+{% endblock %}
+
+
+{% block body %}
+
+<video autoplay muted loop id="bgvideo">
+            <source src="{{ url_for('static', filename='videos/background_workout.mp4')}}" type="video/mp4">
+            Your browser does not support html 5 video.
+</video>
+
+<div class="wrapper">
+    <div class="message">
+        <span class="fs-1"> Push harder, Track smarter, Grow stronger </span> 
+    </div>
+    <div>
+        <a class="btn-custom" href="{{ url_for('get_started')}}">
+        Get Started
+        </a>
+    </div>
+</div>
+{% endblock %}
+

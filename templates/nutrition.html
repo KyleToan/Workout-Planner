@@ -1,0 +1,193 @@
+{% extends"layout2.html" %}
+
+{% block head %}
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href='https://cdn.boxicons.com/3.0.3/fonts/basic/boxicons.min.css' rel='stylesheet'>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Momo Trust Display', sans-serif;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: #222222;
+            }
+
+            .wrapper {
+                width: 400px;
+                padding: 40px;
+                background: black;
+                color: white;
+            }
+
+            .wrapper h1 {
+                text-align: center;
+                font-size: 36px;
+                font-weight: bold;
+            }
+
+            .wrapper .input-box {
+                position: relative;
+                width: 100%;
+                height: 50px;
+                margin: 30px 0;
+            }
+
+            .input-box input {
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                border: none;
+                outline: none;
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                border-radius: 40px;
+                color: white;
+                padding: 20px 45px 20px 20px;
+                font-size: 16px;
+            }
+
+            .input-box input::placeholder{
+                color: white;
+            }
+
+            .input-box i {
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 20px;
+            }
+
+            .wrapper .remember-forgot {
+                display: flex;
+                justify-content: space-between;
+                font-size: 14.5px;
+                margin: -15px 0 15px;
+            }
+
+            .remember-forgot label input {
+                accent-color: #03a9f4;
+                margin-right: 3px;
+            }
+
+            .remember-forgot a {
+                color: white;
+                text-decoration: none;
+            }
+
+            .remember-forgot a:hover {
+                text-decoration: underline;
+            }
+
+            .wrapper .btn {
+                width: 100%;
+                height: 45px;
+                background: white;
+                border: none;
+                outline: none;
+                border-radius: 40px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                font-size: 16px;
+                color: black;
+                font-weight: bold;
+            }
+
+            .wrapper .register-link {
+                font-size: 14.5px;
+                text-align: center;
+                margin: 20px 0 15px;
+            }
+
+            .register-link a {
+                color: white;
+                text-decoration: none;
+            }
+
+            .register-link a:hover {
+                text-decoration: underline;
+            }
+            
+            .input-box select {
+                background: transparent;
+                border: none;
+                outline: none;
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                color: white;
+                padding: 0 20px;
+                font-size: 16px;
+            }
+
+            .input-box select option {
+                background: black;
+                border: none;
+                outline: none;
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                color: white;
+                font-size: 16px;
+            }
+        </style>
+
+{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <form action="" method="post">
+        <h1> Nutrition Calculator  </h1>
+        <div class="input-box">
+            <input name="age" type="text" placeholder="Age (15-80)" required />
+        </div>
+        <div class="input-box">
+            <input name="height" type="text" placeholder="Height (in)" required />
+        </div>
+        <div class="input-box">
+            <input name="weight" type="text" placeholder="Weight (lbs)" required />
+        </div>
+
+        <div class="input-box">
+            <label for="gender">Gender:</label>
+            <br>
+            <select name="gender" id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+
+        <div class="input-box">
+            <label for="activity_level">Activity Level:</label>
+            <select name="activity_level" id="activity_level" required>
+                <option value="">Select Activity Level</option>
+                <option value="0">None </option>
+                <option value="1">Light (1-2 days per week) </option>
+                <option value="2">Moderate (2-4 days per week) </option>
+                <option value="3">High (4-6 days per week)</option>
+                <option value="4">Very High (Daily) </option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn"> Calculate </button>
+
+        {% if bmr %}
+            <hr class="line">
+            <h2> Results: </h2>
+            <p>BMR: {{ bmr }} calories/day</p>
+            <p>Recommended Daily Caloric Intake to Maintain: {{ caloric_intake }} calories/day</p>
+            <p>Minimum Carbs: {{ carbs }} carbs/day</p>
+            <p>Minimum Protein: {{ protein }} protein/day</p>
+            <p>Minimum Fats: {{ fats }} fats/day</p>
+        {% endif %}
+        
+    </form>
+</div>
+{% endblock %}       

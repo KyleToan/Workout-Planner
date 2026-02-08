@@ -1,0 +1,136 @@
+.white-hr
+{
+  border: none;
+  height: 2px;
+  background-color: #ffffff;
+  margin: 40px 0;
+  display: block;
+  width: 80%;
+}
+
+.nav-tabs {
+  background-color: transparent !important;
+  border-bottom: none !important;
+}
+
+.nav-tabs .nav-link,
+.nav-tabs .nav-link.active,
+.navbar .nav-link,
+.navbar .nav-link.active {
+  background-color: transparent !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: transparent !important;
+  color: white !important;
+  box-shadow: none !important;
+}
+.dropdown-menu 
+{
+  min-width: auto;
+  width: fit-content;
+}
+
+.raleway-200>
+ {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.navyblue
+{
+  background-color:#010048 !important;
+}
+
+.montserrat-200
+{
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 200 !important;
+  font-style: normal;
+}
+
+.montserrat-200_bold
+{
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 350 !important;
+  font-style: normal;
+}
+.montserrat-400
+{
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 400 !important;
+  font-style: normal;
+}
+
+
+.text_white
+{
+  color: white;
+}
+#bgvideo
+{
+  position:fixed;
+  top: 0%;
+  left: 0%;
+  min-width: 100%; 
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  transform: translate(-25%, -25%) scale(0.5)
+}
+
+#aboutvideo
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;   
+  height: 30vh;   
+  object-fit: cover;   
+  z-index: -1;  
+}
+
+.navbar.transparent
+{
+  background: transparent !important;
+  border: none;       
+}
+
+.navbar.darkblue
+{
+  background-color: #03002e !important;
+}
+
+.nav-tabs .nav-link, .nav-tabs .nav-link.active, .navbar-brand, .dropdown-menu
+{
+  background: transparent !important;
+  color: white !important;
+  border: none !important;
+}
+
+
+.container
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.button_message
+{
+  margin-bottom: 25px;
+}
+
+.top_message
+{
+  margin-bottom: 100px;
+  margin-top: -150px;
+}
+
